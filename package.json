@@ -1,0 +1,26 @@
+{
+  "name": "com.bazzagibbs.gameevents",
+  "version": "1.0.0",
+  "description": "ScriptableObject event system for easy cross-scene interactions.\n\nAn implementation of the architecture described by Ryan Hipple at Unite 2017 - Game Architecture with Scriptable Objects.",
+  "displayName": "Game Events",
+  "author": {
+    "name": "BazzaGibbs",
+    "email": "bazzagibbsdev@gmail.com",
+    "url": "https://bazzagibbs.itch.io"
+  },
+  "type": "template",
+  "keywords": [
+    "Game",
+    "Event",
+    "Events",
+    "Scriptable",
+    "ScriptableObject"
+  ],
+  "samples": [
+    {
+      "displayName": "Game Event Demo",
+      "description": "Demo usage of Game Events with UI and GameObjects",
+      "path": "Samples~/GameEventDemo"
+    }
+  ]
+}
