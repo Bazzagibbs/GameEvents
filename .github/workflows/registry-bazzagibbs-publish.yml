@@ -1,0 +1,20 @@
+name: Publish Package to BazzaGibbs registry
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # setup node .npmrc file
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.bazzagibbs.com'
+      - run: git config --global user.name "${{ github.actor }}" 
+      - run: git config --global user.email "github-action-${{ github.actor }}@users.noreply.github.com"
+      - run: npm version ${{ github.event.release.tag_name }} --allow-same-version
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.BAZZAGIBBS_REGISTRY_NPM_TOKEN }}

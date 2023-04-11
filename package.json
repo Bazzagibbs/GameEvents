@@ -8,7 +8,7 @@
     "email": "bazzagibbsdev@gmail.com",
     "url": "https://bazzagibbs.itch.io"
   },
-  "type": "template",
+  "type": "library",
   "keywords": [
     "Game",
     "Event",
@@ -22,5 +22,6 @@
       "description": "Demo usage of Game Events with UI and GameObjects",
       "path": "Samples~/GameEventDemo"
     }
-  ]
+  ],
+  "hideInEditor": false
 }
