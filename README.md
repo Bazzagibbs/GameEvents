@@ -41,19 +41,11 @@ class Enemy : MonoBehaviour {
 ```
 
 ## Custom Game Event Types
-Before you can pass custom objects as data with the Game Event system, you will need to make a couple of simple scripts.
-Unity doesn't know how to serialize generic classes, so we need to make concrete versions with our desired data type.
 
-```csharp
-// MyCustomDataGameEvent.cs
-using UnityEngine;
+Custom types can be passed as event data.
+This package comes with an embedded [CodeGen wizard](https://github.com/bazzas-personal-stuff/codegen), which can be accessed through `Tools > Game Events > Create New GameEvent Type`.
 
-[CreateAssetMenu(menuName = "Game Event/MyCustomData Event", fileName = "NewCustomDataEvent", order = 2)]
-public class MyCustomDataGameEvent : BaseGameEvent<MyCustomData> { } 
-//                                                 ^^^^^^^^^^^^ --- The important part
-```
-```csharp
-// MyCustomDataGameEventListener.cs
-public class MyCustomDataGameEventListener : BaseGameEventListener<MyCustomData> { } 
-//                                                                 ^^^^^^^^^^^^ --- Also important
-```
+Fill out the following macros:
+- `NAMESPACE`: The namespace you are using for your C# scripts. If you don't have one, try "MyProject".
+- `TYPE`: The type you want to pass as event data, exactly as it would appear in code. E.g. "MyClass", "float".
+- `CREATE_MENU_ORDER`: (integer) The sorting order for the Create Menu entry, `Create > Game Event > MyClass GameEvent`. Use a value 15 or higher to add a divider at the bottom of the built-in types.
