@@ -1,0 +1,29 @@
+﻿###Runtime/Game Event Listeners/$TYPE.NAME$GameEventListener.cs
+// Generated script for BazzaGibbs.GameEvents package
+
+using System;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace $NAMESPACE$ {
+    public class $TYPE.NAME$GameEventListener : MonoBehaviour {
+        [SerializeField] private $TYPE.NAME$GameEvent m_GameEvent;
+        [SerializeField] private UnityEvent<$TYPE$> m_OnGameEvent;
+        
+        private void Awake() {
+            if (m_GameEvent != null) {
+                m_GameEvent += this;
+            }
+        }
+        
+        private void OnDestroy() {
+            if (m_GameEvent != null) {
+                m_GameEvent -= this;
+            }
+        }
+        
+        public void Invoke($TYPE$ val){
+            m_OnGameEvent?.Invoke(val);
+        }
+    }
+}

@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 133475934}
   - component: {fileID: 133475938}
   - component: {fileID: 133475940}
-  - component: {fileID: 133475937}
+  - component: {fileID: 133475941}
   - component: {fileID: 133475939}
   m_Layer: 0
   m_Name: Cube
@@ -342,36 +342,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -17.934, y: 36.152, z: -12.679}
---- !u!114 &133475937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133475932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a4b57655b541babe57cd8441eb4ab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_GameEvent: {fileID: 11400000, guid: c55bb3a3a73999b4b9ee088df4e98d2d, type: 2}
-  m_OnGameEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 133475938}
-        m_TargetAssemblyTypeName: BazzaGibbs.GameEvents.Demo.UniformScale, Assembly-CSharp
-        m_MethodName: SetScale
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &133475938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,6 +400,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BlinkColor: {r: 1, g: 0, b: 0, a: 1}
   m_BlinkTime: 0.5
+--- !u!114 &133475941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133475932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafd752382effb948b7b7855c3604dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GameEvent: {fileID: 11400000, guid: c55bb3a3a73999b4b9ee088df4e98d2d, type: 2}
+  m_OnGameEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 133475938}
+        m_TargetAssemblyTypeName: BazzaGibbs.GameEvents.Demo.UniformScale, Assembly-CSharp
+        m_MethodName: SetScale
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &454808073
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,8 +596,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c55bb3a3a73999b4b9ee088df4e98d2d, type: 2}
-        m_TargetAssemblyTypeName: BazzaGibbs.GameEvents.BaseGameEvent`1[[System.Single,
-          mscorlib
+        m_TargetAssemblyTypeName: BazzaGibbs.GameEvents.FloatGameEvent, BazzaGibbs.GameEvents
         m_MethodName: Invoke
         m_Mode: 0
         m_Arguments:
@@ -703,7 +702,7 @@ RectTransform:
   - {fileID: 521466976}
   - {fileID: 58982493}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -797,11 +796,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -2.6547136, y: 1.8038139, z: 7.258626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1198112693}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &764926516
@@ -937,7 +936,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 30
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -962,11 +961,45 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.6547136, y: -1.1961861, z: -2.741374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 1198112693}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1198112692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1198112693}
+  m_Layer: 0
+  m_Name: -- scene stuff --
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1198112693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198112692}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.6547136, y: 1.1961861, z: -7.258626}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 963194228}
+  - {fileID: 705507995}
+  - {fileID: 1481377712}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1030,13 +1063,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481377709}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.6547136, y: -1.1961861, z: 7.258626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1198112693}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1597728267
 GameObject:

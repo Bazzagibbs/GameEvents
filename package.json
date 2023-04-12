@@ -1,6 +1,6 @@
 {
   "name": "com.bazzagibbs.gameevents",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ScriptableObject event system for easy cross-scene interactions.\n\nAn implementation of the architecture described by Ryan Hipple at Unite 2017 - Game Architecture with Scriptable Objects.",
   "displayName": "Game Events",
   "author": {

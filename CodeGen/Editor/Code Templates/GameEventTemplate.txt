@@ -1,0 +1,37 @@
+﻿###Runtime/Game Events/$TYPE.NAME$GameEvent.cs
+// Generated script for BazzaGibbs.GameEvents package
+
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace $NAMESPACE$ {
+    [CreateAssetMenu(menuName = "Game Event/$TYPE.NAME$ GameEvent", fileName = "New$TYPE.NAME$Event", order = $CREATE_MENU_ORDER$)]
+    public class $TYPE.NAME$GameEvent : ScriptableObject {
+        private HashSet<$TYPE.NAME$GameEventListener> m_Listeners = new();
+        
+        public void Invoke($TYPE$ val) {
+            foreach ($TYPE.NAME$GameEventListener listener in m_Listeners) {
+                listener.Invoke(val);
+            }
+        }
+        
+        public void AddListener($TYPE.NAME$GameEventListener listener) {
+            m_Listeners.Add(listener);
+        }
+        
+        public void RemoveListener($TYPE.NAME$GameEventListener listener) {
+            m_Listeners.Remove(listener);
+        }
+        
+        public static $TYPE.NAME$GameEvent operator +($TYPE.NAME$GameEvent a, $TYPE.NAME$GameEventListener b) {
+            a.AddListener(b);
+            return a;
+        }
+        
+        public static $TYPE.NAME$GameEvent operator -($TYPE.NAME$GameEvent a, $TYPE.NAME$GameEventListener b) {
+            a.RemoveListener(b);
+            return a;
+        }
+    }
+}

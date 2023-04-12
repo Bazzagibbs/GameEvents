@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6688b73e756c491bb80e5244b5553e8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 513dee347ac34ca4c82af85fe1fa5c40, type: 3}
   m_Name: UIEvent-Slider
   m_EditorClassIdentifier: 

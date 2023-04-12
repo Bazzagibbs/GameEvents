@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0]
+
+### Added
+
+- CodeGen wizard for creating GameEvents of custom types. `Tools > Game Events > Create New GameEvent Type`
+
+### Modified
+
+- Generic GameEvent class and listeners replaced with code-generated implementations for better inspector support
+
 ## [1.0.0]
 
 ### Added
@@ -30,5 +40,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GameEvent implementation for Vector3
 - Sample: UI demo scene
 
+[1.1.0]: https://github.com/bazzas-personal-stuff/gameevents/releases/tag/v1.1.0
 [1.0.0]: https://github.com/bazzas-personal-stuff/gameevents/releases/tag/v1.0.0
 
