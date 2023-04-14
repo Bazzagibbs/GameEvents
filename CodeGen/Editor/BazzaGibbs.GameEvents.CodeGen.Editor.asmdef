@@ -2,7 +2,9 @@
     "name": "BazzaGibbs.GameEvents.CodeGen.Editor",
     "rootNamespace": "BazzaGibbs.GameEvents",
     "references": [],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
