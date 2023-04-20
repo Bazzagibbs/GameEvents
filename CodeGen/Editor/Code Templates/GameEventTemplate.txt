@@ -5,8 +5,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace $NAMESPACE$ {
-    [CreateAssetMenu(menuName = "Game Event/$TYPE.NAME$ GameEvent", fileName = "New$TYPE.NAME$Event", order = $CREATE_MENU_ORDER$)]
+namespace BazzaGibbs.GameEvents.Custom {
+    [CreateAssetMenu(menuName = "Game Event/$TYPE.NAME$ GameEvent", fileName = "New$TYPE.NAME$Event", order = 50)]
     public class $TYPE.NAME$GameEvent : ScriptableObject {
         private HashSet<$TYPE.NAME$GameEventListener> m_Listeners = new();
         

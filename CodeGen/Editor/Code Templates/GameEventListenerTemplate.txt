@@ -5,7 +5,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace $NAMESPACE$ {
+namespace BazzaGibbs.GameEvents.Custom {
     public class $TYPE.NAME$GameEventListener : MonoBehaviour {
         [SerializeField] private $TYPE.NAME$GameEvent m_GameEvent;
         [SerializeField] private UnityEvent<$TYPE$> m_OnGameEvent;
