@@ -5,6 +5,28 @@ Other notable sources:
 - James Lafritz, [ScriptableObject Game Events](https://blog.devgenius.io/scriptableobject-game-events-1f3401bbde72)
 - Jason Weimann, [Game Events - Power & Simplicity in Unity3D](https://www.youtube.com/watch?v=lgA8KirhLEU)
 
+
+## Installation
+
+### Option A: Scoped Registry
+
+All my public/open source packages are hosted on [my registry](https://registry.bazzagibbs.com).
+
+1. Install a Scoped Registry: `Project Settings > Package Manager > Scoped Registries`
+```
+Name:       BazzaGibbs
+URL:        https://registry.bazzagibbs.com
+Scope(s):   com.bazzagibbs
+```
+2. In the Package Manager, select "Add package by name", `com.bazzagibbs.gameevents`
+
+### Option B: Git URL
+
+Adding packages by Git URL has the downside of not properly displaying when there is a package update available.
+
+1. In the Package Manager, select "Add package from git URL", `https://github.com/Bazzagibbs/GameEvents.git`
+
+
 ## Using Game Events
 ### Game Event Assets
 Game Event Assets are used to "trigger" all the listeners subscribed to it. On their own, they don't do anything special.

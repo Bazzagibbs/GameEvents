@@ -6,15 +6,11 @@
   "author": {
     "name": "BazzaGibbs",
     "email": "bazzagibbsdev@gmail.com",
-    "url": "https://bazzagibbs.itch.io"
+    "url": "https://bazzagibbs.com"
   },
   "type": "library",
   "keywords": [
-    "Game",
-    "Event",
-    "Events",
-    "Scriptable",
-    "ScriptableObject"
+    "Game Architecture"
   ],
   "samples": [
     {
