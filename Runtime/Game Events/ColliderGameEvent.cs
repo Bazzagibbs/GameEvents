@@ -5,30 +5,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace BazzaGibbs.GameEvents {
-    [CreateAssetMenu(menuName = "Game Event/Collider GameEvent", fileName = "NewColliderEvent", order = 3)]
+    [CreateAssetMenu(menuName = "Game Event/Collider GameEvent", fileName = "NewColliderEvent", order = 50)]
     public class ColliderGameEvent : ScriptableObject {
-        private HashSet<ColliderGameEventListener> m_Listeners = new();
+        private HashSet<IGameEventListenable<Collider>> m_Listeners = new();
         
         public void Invoke(Collider val) {
-            foreach (ColliderGameEventListener listener in m_Listeners) {
+            foreach (IGameEventListenable<Collider> listener in m_Listeners) {
                 listener.Invoke(val);
             }
         }
         
-        public void AddListener(ColliderGameEventListener listener) {
+        public void AddListener(IGameEventListenable<Collider> listener) {
             m_Listeners.Add(listener);
         }
         
-        public void RemoveListener(ColliderGameEventListener listener) {
+        public void RemoveListener(IGameEventListenable<Collider> listener) {
             m_Listeners.Remove(listener);
         }
         
-        public static ColliderGameEvent operator +(ColliderGameEvent a, ColliderGameEventListener b) {
+        public static ColliderGameEvent operator +(ColliderGameEvent a, IGameEventListenable<Collider> b) {
             a.AddListener(b);
             return a;
         }
         
-        public static ColliderGameEvent operator -(ColliderGameEvent a, ColliderGameEventListener b) {
+        public static ColliderGameEvent operator -(ColliderGameEvent a, IGameEventListenable<Collider> b) {
             a.RemoveListener(b);
             return a;
         }

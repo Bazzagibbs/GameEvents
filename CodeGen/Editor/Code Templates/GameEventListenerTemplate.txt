@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace BazzaGibbs.GameEvents.Custom {
-    public class $TYPE.NAME$GameEventListener : MonoBehaviour {
+    public class $TYPE.NAME$GameEventListener : MonoBehaviour, IGameEventListenable<$TYPE$> {
         [SerializeField] private $TYPE.NAME$GameEvent m_GameEvent;
         [SerializeField] private UnityEvent<$TYPE$> m_OnGameEvent;
         
@@ -24,6 +24,43 @@ namespace BazzaGibbs.GameEvents.Custom {
         
         public void Invoke($TYPE$ val){
             m_OnGameEvent?.Invoke(val);
+        }
+    }
+    
+    [Serializable] 
+    public class $TYPE.NAME$GameEventListenerProp : IGameEventListenable<$TYPE$> {
+        [SerializeField] private $TYPE.NAME$GameEvent m_GameEvent;
+        private UnityEvent<$TYPE$> m_OnGameEvent = new();
+        private bool m_IsSubscribed;
+        
+        public void Invoke($TYPE$ val) {
+            m_OnGameEvent?.Invoke(val);
+        }
+
+        public void AddListener(UnityAction<$TYPE$> call) {
+            m_OnGameEvent.AddListener(call);
+            if (m_IsSubscribed == false) {
+                m_GameEvent.AddListener(this);
+                m_IsSubscribed = true;
+            }
+        }
+
+        public void RemoveListener(UnityAction<$TYPE$> call) {
+            m_OnGameEvent.RemoveListener(call);
+            if (m_OnGameEvent == null) {
+                m_GameEvent.RemoveListener(this);
+                m_IsSubscribed = false;
+            }
+        }
+        
+        public static $TYPE.NAME$GameEventListenerProp operator +($TYPE.NAME$GameEventListenerProp listener, UnityAction<$TYPE$> call) {
+            listener.AddListener(call);
+            return listener;
+        }
+        
+        public static $TYPE.NAME$GameEventListenerProp operator -($TYPE.NAME$GameEventListenerProp listener, UnityAction<$TYPE$> call) {
+            listener.RemoveListener(call);
+            return listener;
         }
     }
 }

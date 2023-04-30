@@ -1,0 +1,10 @@
+﻿###Editor/Game Event Listeners/$TYPE.NAME$GameEventListenerDrawer.cs
+// Generated script for BazzaGibbs.GameEvents package
+
+using UnityEditor;
+using BazzaGibbs.GameEvents;
+
+namespace BazzaGibbs.GameEvents {
+    [CustomPropertyDrawer(typeof($TYPE.NAME$GameEventListenerProp))]
+    class $TYPE.NAME$GameEventListenerPropDrawer : GameEventListenerDrawer {}
+}

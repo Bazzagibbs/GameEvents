@@ -5,30 +5,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace BazzaGibbs.GameEvents {
-    [CreateAssetMenu(menuName = "Game Event/Quaternion GameEvent", fileName = "NewQuaternionEvent", order = 3)]
+    [CreateAssetMenu(menuName = "Game Event/Quaternion GameEvent", fileName = "NewQuaternionEvent", order = 50)]
     public class QuaternionGameEvent : ScriptableObject {
-        private HashSet<QuaternionGameEventListener> m_Listeners = new();
+        private HashSet<IGameEventListenable<Quaternion>> m_Listeners = new();
         
         public void Invoke(Quaternion val) {
-            foreach (QuaternionGameEventListener listener in m_Listeners) {
+            foreach (IGameEventListenable<Quaternion> listener in m_Listeners) {
                 listener.Invoke(val);
             }
         }
         
-        public void AddListener(QuaternionGameEventListener listener) {
+        public void AddListener(IGameEventListenable<Quaternion> listener) {
             m_Listeners.Add(listener);
         }
         
-        public void RemoveListener(QuaternionGameEventListener listener) {
+        public void RemoveListener(IGameEventListenable<Quaternion> listener) {
             m_Listeners.Remove(listener);
         }
         
-        public static QuaternionGameEvent operator +(QuaternionGameEvent a, QuaternionGameEventListener b) {
+        public static QuaternionGameEvent operator +(QuaternionGameEvent a, IGameEventListenable<Quaternion> b) {
             a.AddListener(b);
             return a;
         }
         
-        public static QuaternionGameEvent operator -(QuaternionGameEvent a, QuaternionGameEventListener b) {
+        public static QuaternionGameEvent operator -(QuaternionGameEvent a, IGameEventListenable<Quaternion> b) {
             a.RemoveListener(b);
             return a;
         }
