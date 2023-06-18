@@ -4,7 +4,7 @@
 using UnityEditor;
 using BazzaGibbs.GameEvents;
 
-namespace BazzaGibbs.GameEvents {
+namespace BazzaGibbs.GameEvents.Custom {
     [CustomPropertyDrawer(typeof($TYPE.NAME$GameEventListenerProp))]
     class $TYPE.NAME$GameEventListenerPropDrawer : GameEventListenerDrawer {}
 }
